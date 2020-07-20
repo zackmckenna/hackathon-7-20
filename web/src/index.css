@@ -40,7 +40,6 @@
     -moz-backface-visibility: hidden;
     backface-visibility: hidden; }
 
-
 .layer {
   display: block;
   height: 100%;
@@ -48,6 +47,11 @@
   padding: 0;
   margin: 0;
 }
-.scene {
 
-}
+.title {
+  font-size: 3em;
+  text-shadow: 0 8px 6px rgba(0, 0, 0, 0.6);
+  margin-top: -0.7em;
+  position: absolute;
+  width: 100%;
+  top: 42%; }
