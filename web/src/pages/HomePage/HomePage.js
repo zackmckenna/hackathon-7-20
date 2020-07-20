@@ -8,27 +8,32 @@ const HomePage = () => {
   }, [])
 
   const createLayer = (depth, contents) => {
-    return <li data-depth={`${depth}`}>{contents}</li>
+    return (
+      <li className="layer" data-depth={`${depth}`}>
+        {contents()}
+      </li>
+    )
   }
 
   return (
-    <div className="container mx-auto">
-      <h1 className="text-center mx-auto">HomePage</h1>
+    <div className="flex items-center justify-center h-screen">
       <ul
+        className="bg-indigo-800 text-white font-bold rounded-lg border shadow-lg p-10"
         id="scene"
         data-friction-x="0.1"
         data-friction-y="0.1"
         data-scalar-x="25"
         data-scalar-y="15"
-        className="mx-auto"
       >
-        <li data-depth="0.0">
-          <div>background</div>
+        {createLayer('2.0', () => (
+          <div>test2</div>
+        ))}
+        <li className="layer" data-depth="2.0">
+          <div>test 4</div>
         </li>
-        <li data-depth="0.10">Test1 </li>
-        <li data-depth="0.10">test 2</li>
-        <li data-depth="0.10">test 3</li>
-        {createLayer('0.4', 'test-4')}
+        {createLayer('4.0', () => (
+          <div>test3</div>
+        ))}
       </ul>
     </div>
   )
